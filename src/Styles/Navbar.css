@@ -1,0 +1,92 @@
+/* NAVBAR CONTAINER */
+.NavbarContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2B2A4C;
+}
+/*-------------------------------------*/
+
+
+/* BRAND LOGO */
+#logo {
+    width: 220px;
+}
+/*-------------------------------------*/
+
+
+/* CATEGORIES */
+.categories {
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 30px;
+}
+.categories a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+
+    display: inline-block;
+    position: relative;
+}
+.categories a:hover {
+    color: #B31312;
+}
+.categories a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+
+    bottom: 0;
+    left: 0;
+    background-color: rgb(46, 226, 239);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.categories a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/*-------------------------------------*/
+
+
+/* BUTTONS */
+.buttons {
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 10px;
+}
+.buttons button {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    color: aliceblue;
+    background: transparent;
+    border: 2px solid rgb(46, 226, 239);
+}
+button:hover {
+    color: rgb(46, 226, 239);
+    box-shadow: 2px 2px 5px #03e9f4, -2px -2px 5px #03e9f4;
+}
+/*-------------------------------------*/
+
+
+@media screen and (max-width: 600px) 
+{
+    .categories, .buttons {
+        display: none;
+    }
+    .NavbarContainer {
+        display: flex;
+        justify-content: center;
+    }
+}
