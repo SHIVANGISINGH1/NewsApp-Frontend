@@ -21,7 +21,6 @@ function Navbar()
             </div>
 
             <div className="buttons">
-                <a href="#"><button>Contact Us</button></a>
                 <Link to={"/register"}><button>Register</button></Link>
             </div>
         </nav>

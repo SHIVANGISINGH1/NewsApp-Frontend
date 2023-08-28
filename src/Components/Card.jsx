@@ -5,7 +5,7 @@ function Card(props)
 {
     return (
             <div className="card" style={{width: "28rem"}}>
-            <img src={props.image} alt="News image" id="image" />
+            <img src={props.image} alt="News" id="image" />
             <div className="card-body">
             <h2 id="title">{props.title.slice(0, 230)}</h2> 
             <h4 id="description">
