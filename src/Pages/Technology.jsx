@@ -23,7 +23,7 @@ function Technology()
         <>
             <div className="allNews">
             {
-            val.map((e) => {
+            val?.map((e) => {
                 return (
                     <Card 
                     title={e.title} 
