@@ -9,7 +9,11 @@ function Business()
 
     async function getData() 
     {
-        let res = await fetch(API_URL);
+        const res = await fetch(API_URL, {
+            method: 'GET',
+            mode: 'cors',
+
+        })
         let ans = await res.json();
         setVal(ans.articles);
     }

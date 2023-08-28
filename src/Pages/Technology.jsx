@@ -3,40 +3,42 @@ import { useState, useEffect } from "react";
 const API_KEY = "05753ec938144818a39ba6e341df1b4d";
 const API_URL = `https://newsapi.org/v2/top-headlines?language=en&category=technology&apiKey=${API_KEY}`;
 
-function Technology() 
-{
+function Technology() {
     const [val, setVal] = useState([]);
 
-    async function getData() 
-    {
-        let res = await fetch(API_URL);
+    async function getData() {
+        const res = await fetch(API_URL, {
+            method: 'GET',
+            mode: 'cors',
+
+        })
         let ans = await res.json();
         setVal(ans.articles);
     }
 
     useEffect(() => {
         getData();
-    },[])
+    }, [])
 
 
     return (
         <>
             <div className="allNews">
-            {
-            val?.map((e) => {
-                return (
-                    <Card 
-                    title={e.title} 
-                    description={e.description} 
-                    source={e.source.name} 
-                    date={e.publishedAt}
-                    url={e.url}
-                    image={e.urlToImage}
-                    key={e.url} 
-                    />
-                );
-            })
-            }
+                {
+                    val?.map((e) => {
+                        return (
+                            <Card
+                                title={e.title}
+                                description={e.description}
+                                source={e.source.name}
+                                date={e.publishedAt}
+                                url={e.url}
+                                image={e.urlToImage}
+                                key={e.url}
+                            />
+                        );
+                    })
+                }
             </div>
         </>
     );
